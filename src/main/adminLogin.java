@@ -42,6 +42,7 @@ public class adminLogin extends javax.swing.JFrame {
         closeButton = new javax.swing.JButton();
         adminPasswordField = new javax.swing.JPasswordField();
         adminLoginButton = new javax.swing.JButton();
+        adminShowPassword = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -80,6 +81,7 @@ public class adminLogin extends javax.swing.JFrame {
         });
         jPanel2.add(adminClickHereLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 570, -1, -1));
 
+        adminusernameTextField.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         adminusernameTextField.setPreferredSize(new java.awt.Dimension(490, 42));
         jPanel2.add(adminusernameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, -1, -1));
 
@@ -98,6 +100,7 @@ public class adminLogin extends javax.swing.JFrame {
         closeButton.setBackground(new java.awt.Color(30, 154, 224));
         closeButton.setText("X");
         closeButton.setBorderPainted(false);
+        closeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         closeButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 closeButtonMouseEntered(evt);
@@ -113,6 +116,7 @@ public class adminLogin extends javax.swing.JFrame {
         });
         jPanel2.add(closeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 70, -1));
 
+        adminPasswordField.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         adminPasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adminPasswordFieldActionPerformed(evt);
@@ -124,12 +128,21 @@ public class adminLogin extends javax.swing.JFrame {
         adminLoginButton.setForeground(new java.awt.Color(255, 255, 255));
         adminLoginButton.setText("LOGIN NOW");
         adminLoginButton.setBorderPainted(false);
+        adminLoginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         adminLoginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adminLoginButtonActionPerformed(evt);
             }
         });
         jPanel2.add(adminLoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, 490, 40));
+
+        adminShowPassword.setText("Showpassword");
+        adminShowPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminShowPasswordActionPerformed(evt);
+            }
+        });
+        jPanel2.add(adminShowPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 840, 700));
 
@@ -180,6 +193,14 @@ public class adminLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_adminLoginButtonActionPerformed
 
+    private void adminShowPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminShowPasswordActionPerformed
+        if (adminShowPassword.isSelected()){
+            adminPasswordField.setEchoChar((char)0);
+        }else{
+            adminPasswordField.setEchoChar('*');
+        }
+    }//GEN-LAST:event_adminShowPasswordActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -220,6 +241,7 @@ public class adminLogin extends javax.swing.JFrame {
     public javax.swing.JLabel adminClickHereLabel;
     public javax.swing.JButton adminLoginButton;
     private javax.swing.JPasswordField adminPasswordField;
+    private javax.swing.JCheckBox adminShowPassword;
     private javax.swing.JTextField adminusernameTextField;
     private javax.swing.JButton closeButton;
     private javax.swing.JPanel jPanel1;

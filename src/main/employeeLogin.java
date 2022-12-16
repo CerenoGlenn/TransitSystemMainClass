@@ -17,6 +17,9 @@ public class employeeLogin extends javax.swing.JFrame {
      */
     public employeeLogin() {
         initComponents();
+        
+        
+       
     }
 
     /**
@@ -35,11 +38,12 @@ public class employeeLogin extends javax.swing.JFrame {
         employeeclickhereLabel = new javax.swing.JLabel();
         employeeusernameTextField = new javax.swing.JTextField();
         adminpasswordLabel = new javax.swing.JLabel();
-        employeeloginButton = new javax.swing.JTextField();
         loginLabel4 = new javax.swing.JLabel();
         switchLabel = new javax.swing.JLabel();
         closeButton = new javax.swing.JButton();
         employeePasswordField = new javax.swing.JPasswordField();
+        adminLoginButton = new javax.swing.JButton();
+        employeeShowPassword = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -64,6 +68,7 @@ public class employeeLogin extends javax.swing.JFrame {
         employeeclickhereLabel.setFont(new java.awt.Font("Segoe UI Light", 1, 12)); // NOI18N
         employeeclickhereLabel.setForeground(new java.awt.Color(30, 154, 224));
         employeeclickhereLabel.setText("Click here");
+        employeeclickhereLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         employeeclickhereLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 employeeclickhereLabelMouseClicked(evt);
@@ -71,29 +76,24 @@ public class employeeLogin extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 employeeclickhereLabelMouseEntered(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                employeeclickhereLabelMouseExited(evt);
+            }
         });
         rightPanel.add(employeeclickhereLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 570, -1, -1));
 
+        employeeusernameTextField.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         employeeusernameTextField.setPreferredSize(new java.awt.Dimension(490, 42));
+        employeeusernameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                employeeusernameTextFieldActionPerformed(evt);
+            }
+        });
         rightPanel.add(employeeusernameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, -1, -1));
 
         adminpasswordLabel.setFont(new java.awt.Font("Segoe UI Light", 0, 12)); // NOI18N
         adminpasswordLabel.setText("Password");
         rightPanel.add(adminpasswordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 430, -1, -1));
-
-        employeeloginButton.setBackground(new java.awt.Color(30, 154, 224));
-        employeeloginButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        employeeloginButton.setForeground(new java.awt.Color(255, 255, 255));
-        employeeloginButton.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        employeeloginButton.setText("LOGIN NOW");
-        employeeloginButton.setBorder(null);
-        employeeloginButton.setPreferredSize(new java.awt.Dimension(490, 42));
-        employeeloginButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                employeeloginButtonActionPerformed(evt);
-            }
-        });
-        rightPanel.add(employeeloginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, -1, -1));
 
         loginLabel4.setFont(new java.awt.Font("Segoe UI Light", 0, 15)); // NOI18N
         loginLabel4.setText("Enter your credentials to proceed");
@@ -106,6 +106,7 @@ public class employeeLogin extends javax.swing.JFrame {
         closeButton.setBackground(new java.awt.Color(30, 154, 224));
         closeButton.setText("X");
         closeButton.setBorderPainted(false);
+        closeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         closeButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 closeButtonMouseEntered(evt);
@@ -120,17 +121,36 @@ public class employeeLogin extends javax.swing.JFrame {
             }
         });
         rightPanel.add(closeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 70, -1));
+
+        employeePasswordField.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         rightPanel.add(employeePasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 450, 490, 40));
+
+        adminLoginButton.setBackground(new java.awt.Color(30, 154, 224));
+        adminLoginButton.setForeground(new java.awt.Color(255, 255, 255));
+        adminLoginButton.setText("LOGIN NOW");
+        adminLoginButton.setBorderPainted(false);
+        adminLoginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        adminLoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminLoginButtonActionPerformed(evt);
+            }
+        });
+        rightPanel.add(adminLoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, 490, 40));
+
+        employeeShowPassword.setText("Showpassword");
+        employeeShowPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        employeeShowPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                employeeShowPasswordActionPerformed(evt);
+            }
+        });
+        rightPanel.add(employeeShowPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, -1, -1));
 
         getContentPane().add(rightPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 840, 700));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void employeeloginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeloginButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_employeeloginButtonActionPerformed
 
     private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
         // TODO add your handling code here:
@@ -159,8 +179,29 @@ public class employeeLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_employeeclickhereLabelMouseClicked
 
     private void employeeclickhereLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_employeeclickhereLabelMouseEntered
-        
+        employeeclickhereLabel.setForeground(new java.awt.Color(172,172,172));
     }//GEN-LAST:event_employeeclickhereLabelMouseEntered
+
+    private void adminLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminLoginButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminLoginButtonActionPerformed
+
+    private void employeeclickhereLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_employeeclickhereLabelMouseExited
+        employeeclickhereLabel.setForeground(new java.awt.Color(30,154,224));
+        
+    }//GEN-LAST:event_employeeclickhereLabelMouseExited
+
+    private void employeeShowPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeShowPasswordActionPerformed
+         if (employeeShowPassword.isSelected()) {
+      employeePasswordField.setEchoChar((char)0); //password = JPasswordField
+   } else {
+      employeePasswordField.setEchoChar('*');
+   }
+    }//GEN-LAST:event_employeeShowPasswordActionPerformed
+
+    private void employeeusernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeusernameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_employeeusernameTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,11 +242,12 @@ public class employeeLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton adminLoginButton;
     private javax.swing.JLabel adminpasswordLabel;
     private javax.swing.JButton closeButton;
     private javax.swing.JPasswordField employeePasswordField;
+    private javax.swing.JCheckBox employeeShowPassword;
     private javax.swing.JLabel employeeclickhereLabel;
-    private javax.swing.JTextField employeeloginButton;
     private javax.swing.JTextField employeeusernameTextField;
     private javax.swing.JPanel leftPannel;
     private javax.swing.JLabel loginLabel;
