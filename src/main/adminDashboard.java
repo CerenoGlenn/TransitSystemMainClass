@@ -235,7 +235,7 @@ public class adminDashboard extends javax.swing.JFrame {
         time.setText("2:01 PM");
         jPanel3.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 10, -1, -1));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1180, -1));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, -1));
 
         jPanel7.setBackground(new java.awt.Color(243, 243, 243));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -426,7 +426,7 @@ public class adminDashboard extends javax.swing.JFrame {
 
         jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 900, 400));
 
-        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 960, 640));
+        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 980, 640));
 
         pack();
         setLocationRelativeTo(null);
