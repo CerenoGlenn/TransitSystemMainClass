@@ -181,15 +181,15 @@ public class adminDashboard extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("2:01 PM");
-        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 20, -1, -1));
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 20, -1, -1));
 
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logoutSign.png"))); // NOI18N
         jButton8.setBorder(null);
         jButton8.setContentAreaFilled(false);
         jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel3.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 10, -1, -1));
+        jPanel3.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 10, -1, -1));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1180, -1));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, -1));
 
         jPanel7.setBackground(new java.awt.Color(243, 243, 243));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
