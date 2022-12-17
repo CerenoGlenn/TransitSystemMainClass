@@ -43,6 +43,7 @@ public class adminLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         loginLabel = new javax.swing.JLabel();
         loginLabel1 = new javax.swing.JLabel();
@@ -63,6 +64,10 @@ public class adminLogin extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(30, 154, 224));
         jPanel1.setPreferredSize(new java.awt.Dimension(361, 700));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/bigLogo.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 700));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -70,11 +75,11 @@ public class adminLogin extends javax.swing.JFrame {
 
         loginLabel.setFont(new java.awt.Font("Segoe UI Light", 0, 12)); // NOI18N
         loginLabel.setText("Username");
-        jPanel2.add(loginLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, -1, -1));
+        jPanel2.add(loginLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, -1, -1));
 
         loginLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 35)); // NOI18N
         loginLabel1.setText("Admin Login");
-        jPanel2.add(loginLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, -1, -1));
+        jPanel2.add(loginLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, -1, -1));
 
         adminClickHereLabel.setFont(new java.awt.Font("Segoe UI Light", 1, 12)); // NOI18N
         adminClickHereLabel.setForeground(new java.awt.Color(30, 154, 224));
@@ -91,23 +96,23 @@ public class adminLogin extends javax.swing.JFrame {
                 adminClickHereLabelMouseExited(evt);
             }
         });
-        jPanel2.add(adminClickHereLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 570, -1, -1));
+        jPanel2.add(adminClickHereLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 510, -1, -1));
 
         adminusernameTextField.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         adminusernameTextField.setPreferredSize(new java.awt.Dimension(490, 42));
-        jPanel2.add(adminusernameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, -1, -1));
+        jPanel2.add(adminusernameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, -1));
 
         loginLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 12)); // NOI18N
         loginLabel3.setText("Password");
-        jPanel2.add(loginLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 430, -1, -1));
+        jPanel2.add(loginLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
 
         loginLabel4.setFont(new java.awt.Font("Segoe UI Light", 0, 15)); // NOI18N
         loginLabel4.setText("Enter your credentials to proceed");
-        jPanel2.add(loginLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, -1, -1));
+        jPanel2.add(loginLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, -1, -1));
 
         loginLabel5.setFont(new java.awt.Font("Segoe UI Light", 0, 12)); // NOI18N
         loginLabel5.setText("Are you an employee?");
-        jPanel2.add(loginLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 570, -1, -1));
+        jPanel2.add(loginLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 510, -1, -1));
 
         closeButton.setBackground(new java.awt.Color(30, 154, 224));
         closeButton.setText("X");
@@ -134,7 +139,7 @@ public class adminLogin extends javax.swing.JFrame {
                 adminPasswordFieldActionPerformed(evt);
             }
         });
-        jPanel2.add(adminPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 450, 490, 40));
+        jPanel2.add(adminPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 490, 40));
 
         adminLoginButton.setBackground(new java.awt.Color(30, 154, 224));
         adminLoginButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -151,15 +156,16 @@ public class adminLogin extends javax.swing.JFrame {
                 adminLoginButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(adminLoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, 490, 40));
+        jPanel2.add(adminLoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 490, 40));
 
-        adminShowPassword.setText("Showpassword");
+        adminShowPassword.setText("Show password");
+        adminShowPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         adminShowPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adminShowPasswordActionPerformed(evt);
             }
         });
-        jPanel2.add(adminShowPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, -1, -1));
+        jPanel2.add(adminShowPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 840, 700));
 
@@ -225,7 +231,7 @@ public class adminLogin extends javax.swing.JFrame {
         
         
         try{
-             String sql = "SELECT * FROM admin WHERE username=? AND password=? ";
+             String sql = "SELECT * FROM users WHERE username=? AND password=? ";
             ps = cn.prepareCall(sql);
             ps.setString(1, username);
             ps.setString(2,password);
@@ -236,7 +242,7 @@ public class adminLogin extends javax.swing.JFrame {
                 admindashboard.show();
                 dispose();
             }else{
-                JOptionPane.showMessageDialog(rootPane, "Faild to login");
+                JOptionPane.showMessageDialog(rootPane, "Failed to login");
             }
             
         }catch(Exception e){
@@ -287,6 +293,7 @@ public class adminLogin extends javax.swing.JFrame {
     private javax.swing.JCheckBox adminShowPassword;
     private javax.swing.JTextField adminusernameTextField;
     private javax.swing.JButton closeButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel loginLabel;

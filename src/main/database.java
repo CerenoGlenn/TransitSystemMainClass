@@ -18,16 +18,19 @@ public class database {
     
     public static Connection connectDb(){
         
-        Connection con = null;
+        Connection connection = null;
         
          try{
             Class.forName("com.mysql.jdbc.Driver");
             
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/transitdatabase","root","");
+            connection = (Connection) DriverManager.getConnection("jdbc:mysql://sql6.freesqldatabase.com:3306/sql6585167?","sql6585167","TJ4sFUtJWV");
+          
         }catch (ClassNotFoundException | SQLException e){
             System.out.print(e);
         }
         
-        return con;
+        return connection;
+        
+
     }
 }
