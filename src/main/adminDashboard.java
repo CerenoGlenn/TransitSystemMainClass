@@ -7,6 +7,8 @@ package main;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -19,11 +21,19 @@ public class adminDashboard extends javax.swing.JFrame {
      */
     public adminDashboard() {
         initComponents();
-        
+         date();
         
         
     }
-
+     private void date(){
+        Date d = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("MMMM-dd-YYYY");
+        SimpleDateFormat t = new SimpleDateFormat("HH:mm");
+        String dd = sdf.format(d);
+        String tt = t.format(d);
+        time.setText(tt);
+        date.setText(dd);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,10 +54,12 @@ public class adminDashboard extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
+        date = new javax.swing.JLabel();
+        closeButton = new javax.swing.JButton();
+        time = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -167,7 +179,23 @@ public class adminDashboard extends javax.swing.JFrame {
         jButton7.setBorder(null);
         jButton7.setContentAreaFilled(false);
         jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 650, -1, -1));
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 650, -1, -1));
+
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logoutSign.png"))); // NOI18N
+        jButton8.setBorder(null);
+        jButton8.setContentAreaFilled(false);
+        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 650, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 700));
 
@@ -178,18 +206,36 @@ public class adminDashboard extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png"))); // NOI18N
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 70, 60));
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("2:01 PM");
-        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 20, -1, -1));
+        date.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        date.setForeground(new java.awt.Color(255, 255, 255));
+        date.setText("2:01 PM");
+        jPanel3.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 30, -1, -1));
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logoutSign.png"))); // NOI18N
-        jButton8.setBorder(null);
-        jButton8.setContentAreaFilled(false);
-        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel3.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 10, -1, -1));
+        closeButton.setBackground(new java.awt.Color(30, 154, 224));
+        closeButton.setText("X");
+        closeButton.setBorderPainted(false);
+        closeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        closeButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                closeButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                closeButtonMouseExited(evt);
+            }
+        });
+        closeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closeButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(closeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 10, 70, -1));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, -1));
+        time.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        time.setForeground(new java.awt.Color(255, 255, 255));
+        time.setText("2:01 PM");
+        jPanel3.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 10, -1, -1));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1180, -1));
 
         jPanel7.setBackground(new java.awt.Color(243, 243, 243));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -406,6 +452,31 @@ public class adminDashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void closeButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeButtonMouseEntered
+        // TODO add your handling code here:
+
+        closeButton.setBackground(new java.awt.Color(204,0,51));
+    }//GEN-LAST:event_closeButtonMouseEntered
+
+    private void closeButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeButtonMouseExited
+        // TODO add your handling code here:
+        closeButton.setBackground(new java.awt.Color(30,154,224));
+    }//GEN-LAST:event_closeButtonMouseExited
+
+    private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+
+    }//GEN-LAST:event_closeButtonActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -442,6 +513,8 @@ public class adminDashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton closeButton;
+    private javax.swing.JLabel date;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -456,7 +529,6 @@ public class adminDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -476,5 +548,6 @@ public class adminDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JProgressBar jProgressBar2;
+    private javax.swing.JLabel time;
     // End of variables declaration//GEN-END:variables
 }
