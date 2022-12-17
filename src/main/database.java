@@ -4,10 +4,30 @@
  */
 package main;
 
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 /**
  *
- * @author Glenn
+ * @author Mark Ian Ebuen
  */
 public class database {
     
+    public static Connection connectDb(){
+        
+        Connection con = null;
+        
+         try{
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/transitdatabase","root","");
+        }catch (ClassNotFoundException | SQLException e){
+            System.out.print(e);
+        }
+        
+        return con;
+    }
 }

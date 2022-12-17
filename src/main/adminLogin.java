@@ -4,19 +4,31 @@
  */
 package main;
 
+import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+
 /**
  *
- * @author Glenn
+ * @author Mark Ian Ebuen
  */
 public class adminLogin extends javax.swing.JFrame {
 
     /**
      * Creates new form LoginForm
      */
+    
+    Connection cn = null, con = null;
+    ResultSet rs = null;
+    PreparedStatement ps = null;
+    
     public adminLogin() {
         initComponents();
-        
+         cn = database.connectDb();
         // Flat Button Design
+
         adminLoginButton.setBorderPainted(false);
         adminLoginButton.setFocusPainted(false);
     }
@@ -129,6 +141,11 @@ public class adminLogin extends javax.swing.JFrame {
         adminLoginButton.setText("LOGIN NOW");
         adminLoginButton.setBorderPainted(false);
         adminLoginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        adminLoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminLoginButtonMouseClicked(evt);
+            }
+        });
         adminLoginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adminLoginButtonActionPerformed(evt);
@@ -200,6 +217,32 @@ public class adminLogin extends javax.swing.JFrame {
             adminPasswordField.setEchoChar('*');
         }
     }//GEN-LAST:event_adminShowPasswordActionPerformed
+
+    private void adminLoginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminLoginButtonMouseClicked
+        // This code will get the userInput
+        String username = adminusernameTextField.getText();
+        String password = adminPasswordField.getText();
+        
+        
+        try{
+             String sql = "SELECT * FROM admin WHERE username=? AND password=? ";
+            ps = cn.prepareCall(sql);
+            ps.setString(1, username);
+            ps.setString(2,password);
+            rs = ps.executeQuery();
+            if(rs.next()){
+                JOptionPane.showMessageDialog(rootPane,"Welcome");
+                adminDashboard admindashboard = new adminDashboard();
+                admindashboard.show();
+                dispose();
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Faild to login");
+            }
+            
+        }catch(Exception e){
+            System.out.print(e);
+        } 
+    }//GEN-LAST:event_adminLoginButtonMouseClicked
 
     /**
      * @param args the command line arguments
