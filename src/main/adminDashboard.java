@@ -81,6 +81,7 @@ public class adminDashboard extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -209,7 +210,7 @@ public class adminDashboard extends javax.swing.JFrame {
         date.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         date.setForeground(new java.awt.Color(255, 255, 255));
         date.setText("2:01 PM");
-        jPanel3.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 30, -1, -1));
+        jPanel3.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 30, -1, -1));
 
         closeButton.setBackground(new java.awt.Color(30, 154, 224));
         closeButton.setText("X");
@@ -228,9 +229,9 @@ public class adminDashboard extends javax.swing.JFrame {
                 closeButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(closeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 10, 70, -1));
+        jPanel3.add(closeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 10, 70, -1));
 
-        time.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        time.setFont(new java.awt.Font("Segoe UI", 1, 17)); // NOI18N
         time.setForeground(new java.awt.Color(255, 255, 255));
         time.setText("2:01 PM");
         jPanel3.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 10, -1, -1));
