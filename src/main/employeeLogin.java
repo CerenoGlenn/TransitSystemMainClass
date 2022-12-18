@@ -59,11 +59,11 @@ public class employeeLogin extends javax.swing.JFrame {
 
         usernameLabel.setFont(new java.awt.Font("Segoe UI Light", 0, 12)); // NOI18N
         usernameLabel.setText("Username");
-        rightPanel.add(usernameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, -1, -1));
+        rightPanel.add(usernameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, -1, -1));
 
         loginLabel.setFont(new java.awt.Font("Segoe UI Semibold", 0, 35)); // NOI18N
         loginLabel.setText("Employee Login");
-        rightPanel.add(loginLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, -1, -1));
+        rightPanel.add(loginLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, -1, -1));
 
         employeeclickhereLabel.setFont(new java.awt.Font("Segoe UI Light", 1, 12)); // NOI18N
         employeeclickhereLabel.setForeground(new java.awt.Color(30, 154, 224));
@@ -80,7 +80,7 @@ public class employeeLogin extends javax.swing.JFrame {
                 employeeclickhereLabelMouseExited(evt);
             }
         });
-        rightPanel.add(employeeclickhereLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 570, -1, -1));
+        rightPanel.add(employeeclickhereLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 510, -1, -1));
 
         employeeusernameTextField.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         employeeusernameTextField.setPreferredSize(new java.awt.Dimension(490, 42));
@@ -89,19 +89,19 @@ public class employeeLogin extends javax.swing.JFrame {
                 employeeusernameTextFieldActionPerformed(evt);
             }
         });
-        rightPanel.add(employeeusernameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, -1, -1));
+        rightPanel.add(employeeusernameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, -1));
 
         adminpasswordLabel.setFont(new java.awt.Font("Segoe UI Light", 0, 12)); // NOI18N
         adminpasswordLabel.setText("Password");
-        rightPanel.add(adminpasswordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 430, -1, -1));
+        rightPanel.add(adminpasswordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
 
         loginLabel4.setFont(new java.awt.Font("Segoe UI Light", 0, 15)); // NOI18N
         loginLabel4.setText("Enter your credentials to proceed");
-        rightPanel.add(loginLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, -1, -1));
+        rightPanel.add(loginLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, -1, -1));
 
         switchLabel.setFont(new java.awt.Font("Segoe UI Light", 0, 12)); // NOI18N
         switchLabel.setText("Are you an admin?");
-        rightPanel.add(switchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 570, -1, -1));
+        rightPanel.add(switchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 510, -1, -1));
 
         closeButton.setBackground(new java.awt.Color(30, 154, 224));
         closeButton.setText("X");
@@ -123,7 +123,7 @@ public class employeeLogin extends javax.swing.JFrame {
         rightPanel.add(closeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 70, -1));
 
         employeePasswordField.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        rightPanel.add(employeePasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 450, 490, 40));
+        rightPanel.add(employeePasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 490, 40));
 
         adminLoginButton.setBackground(new java.awt.Color(30, 154, 224));
         adminLoginButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -135,7 +135,7 @@ public class employeeLogin extends javax.swing.JFrame {
                 adminLoginButtonActionPerformed(evt);
             }
         });
-        rightPanel.add(adminLoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, 490, 40));
+        rightPanel.add(adminLoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 490, 40));
 
         employeeShowPassword.setText("Showpassword");
         employeeShowPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -144,7 +144,7 @@ public class employeeLogin extends javax.swing.JFrame {
                 employeeShowPasswordActionPerformed(evt);
             }
         });
-        rightPanel.add(employeeShowPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, -1, -1));
+        rightPanel.add(employeeShowPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, -1, -1));
 
         getContentPane().add(rightPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 840, 700));
 

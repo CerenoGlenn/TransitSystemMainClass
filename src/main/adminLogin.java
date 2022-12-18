@@ -226,12 +226,13 @@ public class adminLogin extends javax.swing.JFrame {
 
     private void adminLoginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminLoginButtonMouseClicked
         // This code will get the userInput
+        try{
         String username = adminusernameTextField.getText();
         String password = adminPasswordField.getText();
         
         
-        try{
-             String sql = "SELECT * FROM users WHERE username=? AND password=? ";
+        
+            String sql = "SELECT * FROM users WHERE username=? AND password=? ";
             ps = cn.prepareCall(sql);
             ps.setString(1, username);
             ps.setString(2,password);
@@ -241,9 +242,14 @@ public class adminLogin extends javax.swing.JFrame {
                 adminDashboard admindashboard = new adminDashboard();
                 admindashboard.show();
                 dispose();
+            }else if (username.isEmpty() || password.isEmpty()){
+                JOptionPane.showMessageDialog(rootPane, "Please fill up all fields!");
             }else{
-                JOptionPane.showMessageDialog(rootPane, "Failed to login");
+                
             }
+                
+                
+            
             
         }catch(Exception e){
             System.out.print(e);
